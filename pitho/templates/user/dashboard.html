@@ -1,0 +1,23 @@
+{% extends "user/layout.html" %}
+{% block pagetitle %}Dashboard{% endblock %}
+{% block body %}
+<div class="main-container">
+	<div class="title"><h1>Dashboard</h1></div>
+	<div class="dashboard">
+	<div class="left">
+	<div class="sidebar">
+	<ul class="sidemenu">
+	<li><a href="{{url_for('dashboard')}}">Home</a></li>
+	<li><a href="{{url_for('user_editprofile')}}">Edit Profile</a></li>
+	<li><a href="{{url_for('user_changepassword')}}">Change Password</a></li>
+	<li><a href="{{url_for('mark_attendance')}}">Mark Attendance</a></li>
+	<li><a href="{{url_for('logout')}}">Logout</a></li>
+	</ul>
+	</div>
+	</div>
+	<div class="right">
+	hello
+	</div>
+</div>
+</div>
+{%endblock%}

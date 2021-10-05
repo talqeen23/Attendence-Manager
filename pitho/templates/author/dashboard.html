@@ -1,0 +1,40 @@
+{% extends "author/layout.html" %}
+{% block pagetitle %}Dashboard{% endblock %}
+{% block body %}
+<div class="main-container">
+<div class="title"><h1>Dashboard</h1></div>
+<div class="dashboard">
+<div class="left">
+	<div class="sidebar">
+	<ul class="sidemenu">
+		<li><a href="{{url_for('author_dashboard')}}">Home</a></li>
+		<li><a href="{{url_for('author_todayattendance')}}">Today's Attendance</a></li>
+		<li><a href="{{url_for('logout')}}">Logout</a></li>
+	</ul>
+	</div>
+</div>
+<div class="right">
+<div class="item_list">
+<ul class="list">
+	<li class="top-head">
+	<span>Name</span>
+	<span>Email</span>
+	<span>Phone</span>
+	<span>Action</span>
+	</li>
+	{% if student_list %}
+	{% for student in student_list %}
+	<li>
+	<span>{{student['name']}}</span>
+	<span>{{student['email']}}</span>
+	<span>{{student['phone']}}</span>
+	<span><a href="{{url_for('view_profile',id=student['id'])}}"><img src="{{url_for('static',filename='user/images/eye.png')}}"></a></span>
+	</li>
+	{% endfor %}
+	{% endif %}
+</ul>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

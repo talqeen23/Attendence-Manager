@@ -1,0 +1,49 @@
+{% extends "user/layout.html" %}
+{% block pagetitle %}Attendance{% endblock %}
+{% block body %}
+<div class="main-container">
+<div class="title"><h1>Mark Attendance</h1></div>
+<div class="left">
+<div class="sidebar">
+	<ul class="sidemenu">
+	<li><a href="{{url_for('dashboard')}}">Home</a></li>
+	<li><a href="{{url_for('user_editprofile')}}">Edit Profile</a></li>
+	<li><a href="{{url_for('user_changepassword')}}">Change Password</a></li>
+	<li><a href="{{url_for('mark_attendance')}}">Mark Attendance</a></li>
+	<li><a href="{{url_for('logout')}}">Logout</a></li>
+	</ul>
+	</div>
+	</div>
+<div class="right">
+<div class="mark_attendance_form">
+
+{% set markbtn="" %}
+{% if mark_in_check==True %}
+	{% set markbtn="disabled=true" %}
+{% endif %}
+<form action="" method="post">
+{{form.csrf_token()}}
+<div class="form-control">
+{{form.markin.label}}
+{{form.markin()}}
+{{render_error(form.markin)}}
+</div> 
+<button type="submit" name="mark" {{markbtn}} value="Mark In">Mark In</button>	
+</form>
+{% set markoutbtn="" %}
+{% if mark_out_check==True %}
+	{% set markoutbtn="disabled=true" %}
+{% endif %}
+<form action="" method="post">
+{{form.csrf_token()}}
+<div class="form-control">
+{{form.markin.label}}
+{{form.markin()}}
+{{render_error(form.markin)}}
+</div>
+<button type="submit" name="mark" {{markoutbtn}} value="Mark Out">Mark Out</button>	
+</form>
+</div>
+</div>
+</div>
+{% endblock %}

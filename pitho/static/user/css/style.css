@@ -1,0 +1,192 @@
+body{
+	margin:0px;
+}
+.main-container{
+	width:100%;
+	display:block;
+}
+.main-container .loginform{
+	max-width:500px;
+	margin:20px auto;
+	padding:10px;
+	background:#f7e7e7;
+	border:2px solid #ddd;
+	border-radius:4px;
+}
+.loginform h1{
+	display:block;
+	width:100%;
+	text-transform:capitalize;
+	padding:0 0 2px 20px;
+	text-align:center;
+}
+.form-control.checkbox label{
+	display:inline-block;
+	margin:0 0 10px 0;
+	width:auto;
+	vertical-align:bottom;
+}
+.form-control label{
+	width:100%;
+	display:block;
+	font-weight:bold;
+	font-size:16px;
+	margin:15px 0 10px;
+}
+.form-control input[type='checkbox']{
+	display:inline-block;
+	max-width:50px;
+	margin:20px 0 10px 0;
+}
+.form-control input,.form-control select{
+	width:100%;
+	display:block;
+	height:35px;
+}
+.main-container .title{
+	background:#dcd1d1;
+	border-bottom:1px solid #ddd;
+	text-align:center;
+	padding:5px 0 0 0;
+}
+.dashboard{
+	width:100%;
+	display:block;
+}
+.main-container .left{
+	display:inline-block;
+	width:30%;
+	min-height:600px;
+	vertical-align:top;
+}
+.main-container .right{
+	display:inline-block;
+	width:69%;
+	min-height:600px;
+}
+ul.sidemenu{
+	padding:0px;
+	max-width:300px;
+	width:100%;
+	display:block;
+	border-top:3px solid #a59797;
+	margin:65px 0 0 5px;
+}
+ul.sidemenu li{
+	background:#f1eaea;
+	height:30px;
+	border-bottom:1px solid #fff;
+	text-align:left;
+	padding:8px 0px 8px 9px;
+	line-height:30px;
+	cursor:pointer;
+}
+ul.sidemenu li:hover{
+	background:#7a7373;
+	color:#fff;
+}	
+ul.sidemenu li a{
+	text-decoration:none;
+}
+.dashboard .right h1 {
+    font-size: 20px;
+    margin: 18px 0 0 0;
+}
+
+.dashboard .form-control label {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    margin: 26px  0 0 0;
+}
+
+.main-container .form-control input[type="submit"] {
+    max-width: 195px;
+    margin: 15px auto;
+    text-transform: capitalize;
+    border: 0;
+    background: #f9777d;
+    color: #fff;
+    font-weight: bold;
+    padding: 18px 10px;
+    height: 53px;
+    border-radius: 6px;
+    box-shadow: 1px 3px 1px rgba(0,0,0,.6);
+	cursor:pointer;
+}
+.messages {
+    position: absolute;
+    transform: translate(-50%);
+    left: 50%;
+    top: 30px;
+    background: rgba(0,0,0,.8);
+    border-radius: 5px;
+    padding: 30px 50px;
+    color: #f00;
+}
+
+.messages ul {
+    padding: 0;
+    margin: 0;
+    list-style: circle;
+}
+
+.mark_attendance_form .form-control {
+    display: none;
+}
+
+.mark_attendance_form button {
+    border: none;
+    height: 120px;
+    width: 120px;
+    border-radius: 100%;
+    font-weight: bold;
+    color: #fff;
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.7);
+}
+
+.mark_attendance_form {
+    margin-top: 64px;
+}
+.mark_attendance_form button[disabled='true']{
+	opacity:.8;
+	cursor:none !important;
+}
+.mark_attendance_form button[value='Mark In']{
+	
+background: #13882c;
+cursor:pointer;
+}
+
+.mark_attendance_form button[value='Mark Out']{
+	
+background: #e88129;
+cursor:pointer;
+}
+.item_list ul.list {
+    background: #fcffd6;
+    padding: 0;
+    margin-right:150px;
+    list-style: none;
+	margin-top:65px;
+}
+
+.item_list  ul.list li {
+    display: block;
+    width: 99%;
+    border-bottom: 1px solid #f3eeee;
+    padding: 0 4px;
+}
+
+.item_list  ul.list li span {
+    min-width: 200px;
+    display: inline-block;
+	margin-top:10px;
+}
+
+.item_list  li.top_head span {
+    font-weight: bold;
+    height: 43px;
+    line-height: 43px;
+	font-family:tahoma;
+}

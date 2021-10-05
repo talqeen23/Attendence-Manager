@@ -1,0 +1,60 @@
+{% extends "user/layout.html" %}
+{% block pagetitle %}Edit Profile{% endblock %}
+{% block body %}
+<div class="main-container">
+<div class="title"><h1>Edit Profile</h1></div>
+<div class="dashboard">
+<div class="left">
+<div class="sidebar">
+	<ul class="sidemenu">
+	<li><a href="{{url_for('dashboard')}}">Home</a></li>
+	<li><a href="{{url_for('user_editprofile')}}">Edit Profile</a></li>
+	<li><a href="{{url_for('user_changepassword')}}">Change Password</a></li>
+	<li><a href="{{url_for('mark_attendance')}}">Mark Attendance</a></li>
+	<li><a href="{{url_for('logout')}}">Logout</a></li>
+	</ul>
+</div>
+</div>
+<div class="right">
+<h1>Edit Profile</h1>
+<form action="" method="POST">
+{{form.csrf_token()}}
+<div class="form-control">
+{{form.name.label}}
+{{form.name()}}
+{{render_error(form.name)}}
+</div>
+<div class="form-control">
+{{form.email.label}}
+{{form.email()}}
+{{render_error(form.email)}}
+</div>
+<div class="form-control">
+{{form.number.label}}
+{{form.number()}}
+<div class="form-conrol">
+<label> Class Teacher </label>
+<select name='classteacher'>
+<option value='0'> Select Class Teacher </option>
+{% if users_list %}
+	{% for users in users_list %}
+	{% set seld="" %}
+	{% if users['id']==row['class_teacher'] %}
+	{% set seld="selected='true'" %}
+	{% endif %}
+	<option value="{{users['id']}}" {{seld}}>{{users['name']}}</option>
+	{% endfor %}
+{% endif %}
+</select>
+</div>
+<div class='form-conrol'>
+<div class="form-control submitbtn">
+<input type='submit' value='save profile'/>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+{% endblock %}

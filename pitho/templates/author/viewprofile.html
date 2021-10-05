@@ -1,0 +1,43 @@
+{%extends "author/layout.html"%}
+{%block pagetitle%}Dashboard{%endblock%}
+{%block body%}
+<div class="main-container">
+<div class="title"><h1>View Profile</h1></div>
+<div class="dashboard">
+<div class="left">
+	<div class="sidebar">
+	<ul class="sidemenu">
+		<li><a href="{{url_for('author_dashboard')}}">Home</a></li>
+		<li><a href="{{url_for('author_todayattendance')}}">Today's Attendance</a></li>
+		<li><a href="{{url_for('logout')}}">Logout</a></li>
+	</ul>
+	</div>
+</div>
+<div class="right">
+{{student}}
+	<div class="item_list">
+	<ul class="list">
+	<li class="top_head">
+	<span>Mark In:</span>
+	</li>
+	{%for i in range(1,32)%}
+	{{i}}
+	<a href="{{url_for('author_dashboard')}}" name="mark" value="Mark In"><img src="{{url_for('static',filename='user/images/arrow.png')}}"></a>
+	{%endfor%}
+	</ul>
+</div>
+<div class="item_list">
+	<ul class="list">
+	<li class="top_head">
+	<span>Mark Out:</span>
+	</li>
+	{%for i in range(1,32)%}
+	{{i}}
+	<a href="{{url_for('author_dashboard')}}" name="mark" value="Mark Out"><img src="{{url_for('static',filename='user/images/cross.png')}}"></a>
+	{%endfor%}
+	</ul>
+	</div>
+</div>
+</div>
+</div>
+{%endblock%}

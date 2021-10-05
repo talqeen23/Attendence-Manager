@@ -1,0 +1,41 @@
+{% extends "author/layout.html" %}
+{% block pagetitle %}Today's Attendance{% endblock %}
+{% block body %}
+<div class="main-container">
+	<div class="title"><h1>Today's Attendance</h1></div>
+	<div class="todayattendance">
+	<div class="left">
+	<div class="sidebar">
+	<ul class="sidemenu">
+	<li><a href="{{url_for('author_dashboard')}}">Home</a></li>
+	<li><a href="{{url_for('author_todayattendance')}}">Today's Attendance</a></li>
+	<li><a href="{{url_for('logout')}}">Logout</a></li>
+	</ul>
+	</div>
+	</div>
+	<div class="right">
+	{{todayattendance}}
+	<ul class="list">
+	<li class="top_head">
+	<span>Name</span>
+	<span>Mark In</span>
+	<span>Mark Out</span>
+	</li> 
+
+{% for student in todayattendance %}
+
+	<li>
+	{% if student['mark_in'] == 1 %}
+	<span>{{student['name']}}</span>
+	<span><a href=""><img src="{{url_for('static',filename='user/images/arrow.png')}}"></a></span>
+{% else %}
+	<span><a href=""><img src="{{url_for('static',filename='user/images/cross.png')}}"></a></span>
+	{% endif %}
+	</li>
+{% endfor %}
+
+</ul>
+	</div>
+</div>
+</div>
+{% endblock %}

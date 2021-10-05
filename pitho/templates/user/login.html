@@ -1,0 +1,28 @@
+{% extends "user/layout.html" %}
+{% block pagetitle %} User Login {% endblock %}
+{% block body %}
+{{data}}
+<div class="main-container">
+<div class="loginform">
+<h1>Login Page</h1>
+<form action="" method="POST">
+{{form.csrf_token()}}
+<div class="form-control">
+{{form.youremail.label}}
+{{form.youremail()}}
+{{render_error(form.youremail)}}
+</div>
+<div class="form-control">
+{{form.password.label}}
+{{form.password()}}
+{{render_error(form.password)}}
+</div>
+<div class="form-control submitbtn">
+{{form.submit()}}
+</div>
+</form>
+<a href ="{{url_for('user_register')}}">Create your account</a></br>
+<a href ="{{url_for('user_forgotpassword')}}">Forgot Password</a>
+</div>
+</div>
+{% endblock %}`
